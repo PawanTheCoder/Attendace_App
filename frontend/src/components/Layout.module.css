@@ -1,0 +1,67 @@
+/* Layout.module.css */
+
+.container {
+    min-height: 100vh;
+    background: #f8fafc;
+}
+
+.page {
+    display: flex;
+    min-height: 100vh;
+    margin-left: 280px;
+    /* Match sidebar width */
+    transition: margin-left 0.3s ease;
+}
+
+/* When sidebar is collapsed */
+.sidebarCollapsed .page {
+    margin-left: 80px;
+}
+
+.main {
+    flex: 1;
+    padding: 2rem;
+    overflow-x: auto;
+    background: white;
+    margin: 0;
+    box-sizing: border-box;
+    min-height: calc(100vh - 80px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .page {
+        margin-left: 0;
+        flex-direction: column;
+    }
+
+    .main {
+        padding: 1.5rem;
+        min-height: auto;
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .main {
+        padding: 1rem;
+    }
+}
+
+/* Dark Theme Support */
+@media (prefers-color-scheme: dark) {
+    .container {
+        background: #1a202c;
+    }
+
+    .main {
+        background: #2d3748;
+        color: #f7fafc;
+    }
+}
+
+/* Smooth transitions */
+.page,
+.main {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}

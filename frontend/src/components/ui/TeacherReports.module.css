@@ -1,0 +1,354 @@
+.container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin: 0 0 0.5rem 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #718096;
+    margin: 0;
+}
+
+.tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #f7fafc;
+    padding-bottom: 1rem;
+}
+
+.tab {
+    background: none;
+    border: none;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s;
+    color: #718096;
+}
+
+.tab:hover {
+    background: #f7fafc;
+    color: #4a5568;
+}
+
+.tab.active {
+    background: #667eea;
+    color: white;
+}
+
+.overview {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.statCard {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.2s;
+}
+
+.statCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.statIcon {
+    font-size: 2rem;
+}
+
+.statContent {
+    flex: 1;
+}
+
+.statNumber {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2d3748;
+    margin-bottom: 0.25rem;
+}
+
+.statLabel {
+    font-size: 0.9rem;
+    color: #718096;
+}
+
+.attendanceRateCard {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+}
+
+.cardTitle {
+    font-size: 1.5rem;
+    color: #2d3748;
+    margin: 0 0 2rem 0;
+}
+
+.rateCircle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: conic-gradient(#48bb78 0% var(--percentage, 0%), #f7fafc var(--percentage, 0%) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    position: relative;
+}
+
+.rateCircle::before {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: white;
+    border-radius: 50%;
+}
+
+.rateNumber {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2d3748;
+    position: relative;
+    z-index: 1;
+}
+
+.rateLabel {
+    font-size: 0.9rem;
+    color: #718096;
+    position: relative;
+    z-index: 1;
+}
+
+.rateDetails {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.rateDetail {
+    text-align: center;
+}
+
+.detailLabel {
+    display: block;
+    font-size: 0.9rem;
+    color: #718096;
+    margin-bottom: 0.25rem;
+}
+
+.detailValue {
+    display: block;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.subjectsCard {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.chart {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.chartItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.chartHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subjectName {
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.attendanceCount {
+    font-size: 0.9rem;
+    color: #718096;
+}
+
+.chartBar {
+    height: 8px;
+    background: #f7fafc;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.chartFill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+.subjectsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.subjectStat {
+    background: #f7fafc;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.subjectStat:hover {
+    background: #edf2f7;
+    transform: translateY(-2px);
+}
+
+.subjectName {
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+}
+
+.attendanceNumber {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #667eea;
+    margin-bottom: 0.25rem;
+}
+
+.attendanceLabel {
+    font-size: 0.8rem;
+    color: #718096;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.refreshButton {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.refreshButton:hover {
+    background: #5a6fd8;
+    transform: translateY(-1px);
+}
+
+.lastUpdated {
+    font-size: 0.9rem;
+    color: #718096;
+}
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    color: #718096;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #e2e8f0;
+    border-left: 4px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .tabs {
+        flex-direction: column;
+    }
+
+    .statsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .rateDetails {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .subjectsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}

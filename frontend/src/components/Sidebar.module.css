@@ -1,0 +1,340 @@
+.sidebar {
+    width: 280px;
+    height: 100vh;
+    background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.collapsed {
+    width: 80px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+}
+
+.brandText {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #ecf0f1;
+}
+
+.toggleButton {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.toggleButton:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* User Info */
+.userInfo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #3498db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: white;
+}
+
+.userDetails {
+    flex: 1;
+}
+
+.userName {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.userRole {
+    font-size: 0.875rem;
+    color: #bdc3c7;
+    text-transform: capitalize;
+}
+
+/* Navigation */
+.nav {
+    flex: 1;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.navItem {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    background: transparent;
+    border: none;
+    color: #ecf0f1;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    margin: 0 0.5rem;
+    border-radius: 8px;
+}
+
+.navItem:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.navItem.active {
+    background: rgba(52, 152, 219, 0.2);
+    color: #3498db;
+    border-left: 3px solid #3498db;
+}
+
+.navIcon {
+    font-size: 1.25rem;
+    min-width: 24px;
+}
+
+.navLabel {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.activeIndicator {
+    position: absolute;
+    right: 1rem;
+    width: 6px;
+    height: 6px;
+    background: #3498db;
+    border-radius: 50%;
+}
+
+/* Refresh Section */
+.refreshSection {
+    padding: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.refreshButton {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0.75rem;
+    background: rgba(52, 152, 219, 0.2);
+    border: 1px solid rgba(52, 152, 219, 0.3);
+    color: #3498db;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.9rem;
+}
+
+.refreshButton:hover:not(:disabled) {
+    background: rgba(52, 152, 219, 0.3);
+    transform: translateY(-1px);
+}
+
+.refreshButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.refreshIcon {
+    font-size: 1rem;
+}
+
+.refreshText {
+    font-weight: 500;
+}
+
+/* Footer */
+.footer {
+    padding: 1.5rem 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.statHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.statTitle {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #bdc3c7;
+}
+
+.statUpdate {
+    font-size: 0.75rem;
+    background: #27ae60;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.statNumber {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #3498db;
+    margin-bottom: 0.25rem;
+}
+
+.statLabel {
+    font-size: 0.875rem;
+    color: #bdc3c7;
+}
+
+.detailedStats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.statDetail {
+    text-align: center;
+}
+
+.statDetailValue {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.statDetailValue.present {
+    color: #27ae60;
+}
+
+.statDetailValue.absent {
+    color: #e74c3c;
+}
+
+.statDetailLabel {
+    font-size: 0.75rem;
+    color: #bdc3c7;
+}
+
+.loadingStats {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #f39c12;
+    margin-top: 0.5rem;
+}
+
+/* Student Info */
+.studentInfo {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.studentId {
+    font-size: 0.75rem;
+    color: #bdc3c7;
+}
+
+.studentStatus {
+    font-size: 0.75rem;
+    color: #27ae60;
+    font-weight: bold;
+}
+
+/* Collapsed State Adjustments */
+.sidebar.collapsed .navItem {
+    justify-content: center;
+    padding: 0.75rem;
+}
+
+.sidebar.collapsed .navIcon {
+    font-size: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-height: 700px) {
+    .userInfo {
+        padding: 1rem;
+    }
+
+    .nav {
+        padding: 0.5rem 0;
+    }
+
+    .footer {
+        padding: 1rem;
+    }
+}
+
+/* Scrollbar Styling */
+.sidebar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}

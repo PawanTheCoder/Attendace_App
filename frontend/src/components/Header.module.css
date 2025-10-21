@@ -1,0 +1,277 @@
+/* Header.module.css */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 280px;
+  /* Match sidebar width */
+  right: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e5e7eb;
+  height: 70px;
+  transition: left 0.3s ease;
+}
+
+/* When sidebar is collapsed */
+.sidebarCollapsed .header {
+  left: 80px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 2rem;
+  max-width: 100%;
+}
+
+/* Left Section */
+.left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.breadcrumb {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.breadcrumb strong {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.role {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+/* Right Section */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Time Info */
+.timeInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.125rem;
+}
+
+.date {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.time {
+  font-size: 1rem;
+  color: #374151;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* User Info */
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.userDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.125rem;
+}
+
+.userName {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.userRole {
+  font-size: 0.75rem;
+  color: #6b7280;
+  text-transform: capitalize;
+  background: #f3f4f6;
+  padding: 0.125rem 0.5rem;
+  border-radius: 12px;
+}
+
+.userAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Logout Button */
+.logout {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.logout:hover {
+  background: #ef4444;
+  color: white;
+  border-color: #ef4444;
+  transform: translateY(-1px);
+}
+
+.logoutIcon {
+  font-size: 1rem;
+}
+
+.logoutText {
+  display: inline;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .header {
+    left: 0;
+  }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 60px;
+    left: 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .breadcrumb strong {
+    font-size: 1.1rem;
+  }
+
+  .role {
+    display: none;
+  }
+
+  .timeInfo {
+    display: none;
+  }
+
+  .userDetails {
+    display: none;
+  }
+
+  .logoutText {
+    display: none;
+  }
+
+  .logout {
+    padding: 0.5rem;
+  }
+
+  .userAvatar {
+    width: 36px;
+    height: 36px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .userInfo {
+    gap: 0.75rem;
+  }
+}
+
+/* Dark Theme Support */
+@media (prefers-color-scheme: dark) {
+  .header {
+    background: rgba(45, 55, 72, 0.95);
+    border-bottom-color: #4a5568;
+  }
+
+  .breadcrumb strong {
+    color: #f7fafc;
+  }
+
+  .role {
+    color: #cbd5e0;
+  }
+
+  .date {
+    color: #cbd5e0;
+  }
+
+  .time {
+    color: #e2e8f0;
+  }
+
+  .userName {
+    color: #f7fafc;
+  }
+
+  .userRole {
+    color: #a0aec0;
+    background: #4a5568;
+  }
+
+  .logout {
+    background: #4a5568;
+    border-color: #718096;
+    color: #cbd5e0;
+  }
+
+  .logout:hover {
+    background: #ef4444;
+    color: white;
+    border-color: #ef4444;
+  }
+}
+
+/* Animation */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.header {
+  animation: slideDown 0.3s ease-out;
+}
